@@ -32,14 +32,14 @@ class NewsCubit extends Cubit<NewsAppStates> {
   List<ArticleModel> searchNewsList = [];
 
   Future<void> getBusinessNews() async {
+    emit(NewsGetBusinessLoadingState());
     try {
-      emit(NewsGetBusinessLoadingState());
       businessNewsList = await DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'business',
-          'apiKey': 'b241fbd4a0fa401789df8c346b7a76b6',
+          'apiKey': 'c338c3ea61074394bc9205fe65f516cc',
         },
       );
       emit(NewsGetBusinessSuccessState());
@@ -55,9 +55,9 @@ class NewsCubit extends Cubit<NewsAppStates> {
       sportsNewsList = await DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'sports',
-          'apiKey': 'b241fbd4a0fa401789df8c346b7a76b6',
+          'apiKey': 'c338c3ea61074394bc9205fe65f516cc',
         },
       );
       emit(NewsGetSportsSuccessState());
@@ -73,9 +73,9 @@ class NewsCubit extends Cubit<NewsAppStates> {
       scienceNewsList = await DioHelper.getData(
         url: 'v2/top-headlines',
         query: {
-          'country': 'eg',
+          'country': 'us',
           'category': 'science',
-          'apiKey': 'b241fbd4a0fa401789df8c346b7a76b6',
+          'apiKey': 'c338c3ea61074394bc9205fe65f516cc',
         },
       );
       emit(NewsGetScienceSuccessState());
@@ -92,7 +92,7 @@ class NewsCubit extends Cubit<NewsAppStates> {
         url: 'v2/everything',
         query: {
           'q': value,
-          'apiKey': 'b241fbd4a0fa401789df8c346b7a76b6',
+          'apiKey': 'c338c3ea61074394bc9205fe65f516cc',
         },
       );
       emit(NewsGetSearchSuccessState());

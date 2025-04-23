@@ -9,9 +9,13 @@ class WebViewPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: WebView(
-        initialUrl: url,
-        javascriptMode: JavascriptMode.unrestricted,
-    ),);
+      body: WebViewWidget(
+        controller: WebViewController()
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..loadRequest(
+            Uri.parse(url),
+          ),
+      ),
+    );
   }
 }

@@ -9,34 +9,40 @@ class SciencePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Builder(builder: (context) {
-      NewsCubit.get(context).getScienceNews();
-      return BlocBuilder<NewsCubit, NewsAppStates>(
-        builder: (context, state) {
-          if (state is NewsGetScienceLoadingState) {
-            return Center(
-              child: CircularProgressIndicator(
-                color: Theme.of(context).primaryColor,
+    return BlocBuilder<NewsCubit, NewsAppStates>(
+      builder: (context, state) {
+        if (NewsCubit.get(context).scienceNewsList.isNotEmpty) {
+          return ArticleItemsBuilder(
+            articleList: NewsCubit.get(context).scienceNewsList,
+          );
+        } else if (state is NewsGetScienceLoadingState) {
+          return Center(
+            child: CircularProgressIndicator(
+              color: Theme.of(context).primaryColor,
+            ),
+          );
+        } else if (state is NewsGetScienceErrorState) {
+          return const Center(
+            child: Text(
+              'Error occurred while loading science news.',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
               ),
-            );
-          } else if (state is NewsGetScienceErrorState) {
-            return const Center(
-              child: Text(
-                'Error occurred while loading science news.',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 25,
-                ),
+            ),
+          );
+        } else {
+          return const Center(
+            child: Text(
+              'There is no data.',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
               ),
-            );
-          } else if (state is NewsGetScienceSuccessState) {
-            var list = NewsCubit.get(context).scienceNewsList;
-            return ArticleItemsBuilder(articleList: list);
-          } else {
-            return Container();
-          }
-        },
-      );
-    });
+            ),
+          );
+        }
+      },
+    );
   }
 }

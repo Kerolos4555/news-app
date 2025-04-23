@@ -33,7 +33,10 @@ class MyApp extends StatelessWidget {
       create: (context) => NewsCubit()
         ..changeThemeMode(
           fromShared: isDark,
-        ),
+        )
+        ..getBusinessNews()
+        ..getSportsNews()
+        ..getScienceNews(),
       child: BlocConsumer<NewsCubit, NewsAppStates>(
         listener: (context, state) {},
         builder: (context, state) {
