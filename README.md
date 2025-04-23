@@ -1,16 +1,44 @@
-# news_application
+# News Application
 
-A new Flutter project.
+News Application build with Flutter Framework.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+- News application that fetches news articles from a public API using Dio.
+- It offers a smooth and modern reading experience with full support for light and dark themes.
 
-A few resources to get you started if this is your first Flutter project:
+## 📌 Data source
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Free News API: https://newsapi.org/
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠️ Tech
+
+- Flutter
+- Dio – For making HTTP requests and handling API responses
+- Bloc (Cubit) – State Management
+- SharedPreferences – To persist the app’s theme (dark/light) across sessions
+- WebView – To open full articles inside the app
+
+## 📱 Screens
+
+## 🏠 Home Screen
+
+![Image](https://github.com/user-attachments/assets/a2495b80-459b-496f-aa44-4d63be606d93)
+
+![Image](https://github.com/user-attachments/assets/11e8975d-523a-41f6-8dc4-2a1d8c81e88b)
+
+![Image](https://github.com/user-attachments/assets/f84832a2-6987-47e6-b4c8-7ebcb231ce00)
+
+![Image](https://github.com/user-attachments/assets/fd454a11-c6c9-486f-b723-792356194499)
+
+![Image](https://github.com/user-attachments/assets/5a36ba8d-b6e2-4417-8561-f4de4db17102)
+
+![Image](https://github.com/user-attachments/assets/ea689c35-685d-4802-a15c-011fdfd06b19)
+
+## 🔍 Search Screen
+
+![Image](https://github.com/user-attachments/assets/d8c55938-7a58-4281-b45e-78629cd6a2d6)
+
+## 🌐 WebView
+
+![Image](https://github.com/user-attachments/assets/8442cf01-515f-47e6-8230-9b2086b96602)
